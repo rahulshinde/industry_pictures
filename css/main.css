@@ -1,0 +1,157 @@
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50%{
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+html{
+  font-size: 16px;
+  font-family: 'Univers LT Std', serif;
+}
+
+body{
+  margin: 1rem;
+  transition: background-color ease 0.3s;
+}
+
+.video_shown,
+.image_shown{
+  background-color: #000;
+}
+
+.video_shown header{
+  border: 2px solid transparent;
+}
+
+.video_shown header svg{
+  fill: #f00 !important;
+}
+
+.video_shown header svg#dot{
+  animation: blink infinite 0.75s;
+  -webkit-animation: blink infinite 0.75s;
+}
+
+.video_container,
+header{
+  width: 75%;
+  height: 40vw;
+  max-height: calc(100vh - 10rem);
+}
+
+header{
+  position: fixed;
+  right: 1rem;
+  border: 2px solid #000;
+  transition: border ease 0.3s;
+  -webkit-transition: border ease 0.3s;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+header svg{
+  position: absolute;
+  height: 2rem;
+  top: 1rem; 
+  right: 1rem;
+  transition: fill ease 0.3s;
+  -webkit-transition: fill ease 0.3s;
+}
+
+header svg#dot{
+  transform: translateX(-26rem);
+  opacity: 1;
+  animation: none;
+  -webkit-animation: none;
+}
+
+footer{
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  text-align: right;
+  z-index: 12;
+}
+
+.project_links{
+  padding-left: 0;
+  width: calc(25% - 1rem);
+  padding-right: 2rem;
+  box-sizing: border-box;
+}
+
+.project_links li{
+  list-style: none;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.project_links a:link,
+.project_links a:visited,
+.nick_link:link,
+.nick_link:visited{
+  color: #000;
+  transition: color ease 0.3s;
+  -webkit-transition: color ease 0.3s;
+  text-decoration: none;
+}
+
+.nick_link img{
+  position: fixed;
+  width: 40%;
+  height: 80vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity ease 0.3s;
+  -webkit-transition: opacity ease 0.3s;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.nick_link:hover img{
+  opacity: 1;
+}
+
+.project_links a:hover,
+.nick_link:hover{
+  color: #fff;
+  text-decoration: underline;
+}
+
+.project_links a:hover .video_container{
+  opacity: 1;
+}
+
+.video_container{
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  overflow: hidden;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity ease 0.3s;
+  -webkit-transition: opacity ease 0.3s;
+}
+
+.video_container video{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%; 
+  min-height: 100%; 
+  width: 100%; 
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+}
