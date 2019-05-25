@@ -198,6 +198,11 @@ main{
   margin-top: calc(70vw + 1rem);
 }
 
+.video_container{
+  transition: opacity ease 0.75s;
+  -webkit-transition: opacity ease 0.75s;
+}
+
 .project_link.selected .video_container{
   opacity: 1;
 }
