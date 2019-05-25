@@ -6,7 +6,6 @@ $(document).ready(function(){
   $('.nick_link').on('mouseleave', hideImage);
 
   window_width = $(window).width();
-  console.log(window_width);
 
   if (window_width <= 1000) setupCycleImages();
 });
@@ -28,6 +27,18 @@ hideImage = function(){
 }
 
 setupCycleImages = function(){
-  $('.project_link').first().addClass('selected');
-  
+  project_links = $('.project_link');
+  project_links.first().addClass('selected');
+  current_project = 0;
+  total_projects = project_links.length - 1;
+  cycleImages();
+}
+
+cycleImages = function(){
+  cycle = setInterval(function(){
+    current_project = current_project + 1
+    if (current_project > total_projects) current_project = 0;
+    project_links.removeClass('selected');
+    project_links.eq(current_project).addClass('selected');
+  }, 3000)
 }
