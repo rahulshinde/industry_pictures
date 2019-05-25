@@ -125,6 +125,16 @@ footer{
   pointer-events: none;
 }
 
+.rahul_link:link,
+.rahul_link:visited{
+  color: #000;
+  text-decoration: none;
+}
+
+.rahul_link:hover{
+  text-decoration: underline;
+}
+
 .nick_link:hover img{
   opacity: 1;
 }
@@ -163,9 +173,9 @@ footer{
   transform: translate(-50%, -50%);
 }
 
-@media (max-width: 787px){
+@media (max-width: 1000px){
 html{
-  font-size: 14px;
+  font-size: 20px;
 }
 .video_container,
 header{
@@ -174,14 +184,39 @@ header{
   right: 0;
   width: 100%;
   height: 70vw;
-  border: 2px solid transparent;  
+  border: 0px solid transparent;  
 }
+
+header svg{
+  fill: #f00;
+}
+header svg#dot{
+  animation: blink infinite 0.75s;
+}
+
 main{
-  margin-top: calc(70vw - 1rem);
+  margin-top: calc(70vw + 1rem);
 }
 
 .video_container{
   opacity: 1;
+}
+
+.project_links{
+  width: calc(50% - 1rem);
+  padding-right: 0;
+}
+
+footer{
+  padding-top: 1rem;
+  position:static;
+  text-align: left;
+}
+}
+
+@media (max-width: 767px){
+html{
+  font-size: 14px;
 }
 
 header svg{
@@ -196,16 +231,5 @@ header svg{
 header svg#dot{
   animation: blink infinite 0.75s;
   transform: translateX(-13rem);
-}
-.project_links{
-  width: calc(50% - 1rem);
-  padding-right: 0;
-}
-
-footer{
-  border-top: 2px solid #000;
-  padding-top: 1rem;
-  position:static;
-  text-align: left;
 }
 }
