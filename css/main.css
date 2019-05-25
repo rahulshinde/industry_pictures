@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Univers LT Std';
+  src: url('fonts/UniversLTStd-Bold.otf');
+  font-weight: 800;
+}
+
 @keyframes blink {
   0% {
     opacity: 1;
@@ -15,6 +21,7 @@
 html{
   font-size: 16px;
   font-family: 'Univers LT Std', serif;
+  font-weight: 800;
 }
 
 body{
