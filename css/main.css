@@ -232,4 +232,9 @@ header svg#dot{
   animation: blink infinite 0.75s;
   transform: translateX(-13rem);
 }
+
+.project_links{
+  width: calc(80% - 1rem);
+  padding-right: 0;
+}
 }
