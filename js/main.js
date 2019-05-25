@@ -4,6 +4,11 @@ $(document).ready(function(){
   
   $('.nick_link').on('mouseenter', showImage);
   $('.nick_link').on('mouseleave', hideImage);
+
+  window_width = $(window).width();
+  console.log(window_width);
+
+  if (window_width <= 1000) setupCycleImages();
 });
 
 showVid = function(){
@@ -20,4 +25,9 @@ showImage = function(){
 
 hideImage = function(){
   $('body').removeClass('image_shown')
+}
+
+setupCycleImages = function(){
+  $('.project_link').first().addClass('selected');
+  
 }

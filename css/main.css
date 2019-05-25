@@ -198,8 +198,12 @@ main{
   margin-top: calc(70vw + 1rem);
 }
 
-.video_container{
+.project_link.selected .video_container{
   opacity: 1;
+}
+
+a.project_link.selected{
+  text-decoration: underline;
 }
 
 .project_links{
@@ -221,7 +225,7 @@ html{
 
 header svg{
   position: absolute;
-  height: 1rem;
+  height: 1.35rem;
   top: 1rem; 
   right: 1rem;
   transition: fill ease 0.3s;
@@ -230,11 +234,12 @@ header svg{
 }
 header svg#dot{
   animation: blink infinite 0.75s;
-  transform: translateX(-13rem);
+  transform: translateX(-17.5rem);
 }
 
 .project_links{
   width: calc(80% - 1rem);
   padding-right: 0;
 }
+
 }
