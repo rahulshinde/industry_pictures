@@ -18,6 +18,24 @@
   }
 }
 
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+
+  50%{
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.small_type{
+  font-size: 0.7rem;
+}
+
 html{
   font-size: 16px;
   font-family: 'Univers LT Std', serif;
@@ -25,8 +43,8 @@ html{
 }
 
 body{
-  margin: 1rem;
-  transition: background-color ease 0.3s;
+  margin: 2rem;
+  transition: background-color ease 0.5s;
 }
 
 .video_shown,
@@ -34,56 +52,106 @@ body{
   background-color: #000;
 }
 
+.video_shown footer{
+  opacity: 0;
+}
+
 .video_shown header{
-  border: 2px solid transparent;
+  border: 3px solid transparent;
 }
 
 .video_shown header svg{
-  fill: #f00 !important;
+  fill: #ff0000 !important;
 }
 
-.video_shown header svg#dot{
+.video_shown header svg{
   animation: blink infinite 0.75s;
   -webkit-animation: blink infinite 0.75s;
 }
 
+.video_shown #scrolling_text_wrapper{
+  position: fixed;
+  bottom: 20vh;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  /*opacity: 1;*/
+}
+
+#scrolling_text_wrapper{
+  opacity: 0;
+  /*animation: scroll infinite linear 10s;
+  -webkit-animation: scroll infinite linear 10s;*/
+  z
+}
+
+#scrolling_text_wrapper svg{
+  fill: #ffffff;
+  height: 15vh;
+  max-width: 70%;
+  transform: scale(1, 4) skew(-30deg);
+}
+
 .video_container,
 header{
-  width: 75%;
+  width: calc(75% - 8rem);
   height: 40vw;
   max-height: calc(100vh - 10rem);
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
 }
 
 header{
   position: fixed;
-  right: 1rem;
-  border: 2px solid #000;
-  transition: border ease 0.3s;
-  -webkit-transition: border ease 0.3s;
+  right: 2rem;
+  border: 3px solid transparent;
+  transition: border ease 0.5s;
+  -webkit-transition: border ease 0.5s;
   box-sizing: border-box;
   z-index: 10;
 }
 
 header svg{
   position: absolute;
-  height: 2rem;
-  top: 1rem; 
-  right: 1rem;
-  transition: fill ease 0.3s;
-  -webkit-transition: fill ease 0.3s;
+  height: 0.8rem;
+  top: 2rem; 
+  right: 2rem;
+  transition: fill ease 0.5s;
+  -webkit-transition: fill ease 0.5s;
 }
 
-header svg#dot{
-  transform: translateX(-26rem);
-  opacity: 1;
-  animation: none;
-  -webkit-animation: none;
+svg#plant,
+svg#industryplant_text{
+  position: fixed;
+  right: 1rem;
+  opacity: 0;
+  fill: #ffffff;
+  pointer-events: none;
+  transition: opacity ease 0.5s;
+  -webkit-transition: opacity ease 0.5s;  
+}
+
+svg#industryplant_text{
+  height: 2rem;
+  top: 5.2rem; 
+  transform: translateX(-7.85rem);
+  -webkit-transform: translateX(-7.85rem);
+}
+
+svg#plant{
+  height: 2.3rem;
+  top: 5rem;
+  transform: translateX(-30.28rem);
+  -webkit-transform: translateX(-30.28rem);
 }
 
 footer{
   position: fixed;
-  right: 1rem;
-  bottom: 1rem;
+  right: 2rem;
+  bottom: 2rem;
+  opacity: 1;
+  transition: opacity ease 0.5s;
+  -webkit-transition: opacity ease 0.5s;
   text-align: right;
   z-index: 12;
 }
@@ -106,21 +174,21 @@ footer{
 .nick_link:link,
 .nick_link:visited{
   color: #000;
-  transition: color ease 0.3s;
-  -webkit-transition: color ease 0.3s;
+  transition: color ease 0.5s;
+  -webkit-transition: color ease 0.5s;
   text-decoration: none;
 }
 
 .nick_link img{
   position: fixed;
   width: 40%;
-  height: 80vh;
+  height: 60vh;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
-  transition: opacity ease 0.3s;
-  -webkit-transition: opacity ease 0.3s;
+  transition: opacity ease 0.5s;
+  -webkit-transition: opacity ease 0.5s;
   z-index: 100;
   pointer-events: none;
 }
@@ -135,8 +203,9 @@ footer{
   text-decoration: underline;
 }
 
-.nick_link:hover img{
-  opacity: 1;
+.nick_link:hover img,
+.nick_link:hover svg{
+  opacity: 1 !important;
 }
 
 .project_links a:hover,
@@ -151,14 +220,14 @@ footer{
 
 .video_container{
   position: fixed;
-  right: 1rem;
-  top: 1rem;
+  right: 2rem;
+  top: 2rem;
   overflow: hidden;
   z-index: 1;
   opacity: 0;
   pointer-events: none;
-  transition: opacity ease 0.3s;
-  -webkit-transition: opacity ease 0.3s;
+  transition: opacity ease 0.5s;
+  -webkit-transition: opacity ease 0.5s;
 }
 
 .video_container video{
@@ -184,7 +253,9 @@ header{
   right: 0;
   width: 100%;
   height: 70vw;
-  border: 0px solid transparent;  
+  border: 0px solid transparent; 
+  border-radius: 0;
+  -webkit-border-radius: 0; 
 }
 
 header svg{
@@ -199,8 +270,8 @@ main{
 }
 
 .video_container{
-  transition: opacity ease 0.75s;
-  -webkit-transition: opacity ease 0.75s;
+  transition: opacity ease 0.5s;
+  -webkit-transition: opacity ease 0.5s;
 }
 
 .project_link.selected .video_container{
@@ -233,8 +304,8 @@ header svg{
   height: 1.35rem;
   top: 1rem; 
   right: 1rem;
-  transition: fill ease 0.3s;
-  -webkit-transition: fill ease 0.3s;
+  transition: fill ease 0.5s;
+  -webkit-transition: fill ease 0.5s;
   fill: #f00;
 }
 header svg#dot{
